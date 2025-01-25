@@ -1,0 +1,182 @@
+<!DOCKTYPE html>
+<html>
+    <head>
+        <title>
+            MaximDraw
+        </title>
+       
+        <meta charset="UTF-8">
+        <link href="style.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+    <div class="container-layout">
+        <div id="sideBar" class=" p-3" style="width: 210px;">
+            <div class="container" style="text-align: end;">
+                <button class="btn p-0 align-self-end">
+                    <i class="fa-solid fa-angles-left" onclick="toggleSidebar()"></i>
+                </button>
+            </div>
+
+            <a href="/" class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 100 100">
+                    <path fill="#f9e65c" d="M82,29.429v41.143C82,76.857,76.857,82,70.571,82H29.429C23.143,82,18,76.857,18,70.571V29.429	C18,23.143,23.143,18,29.429,18h41.143C76.857,18,82,23.143,82,29.429z"></path><path fill="#1f212b" d="M70.571,83H29.429C22.575,83,17,77.424,17,70.571V29.429C17,22.576,22.575,17,29.429,17h41.143	C77.425,17,83,22.576,83,29.429v41.143C83,77.424,77.425,83,70.571,83z M29.429,19C23.679,19,19,23.678,19,29.429v41.143	C19,76.322,23.679,81,29.429,81h41.143C76.321,81,81,76.322,81,70.571V29.429C81,23.678,76.321,19,70.571,19H29.429z"></path><path fill="#1f212b" d="M51.5,78h-22c-4.136,0-7.5-3.364-7.5-7.5v-20c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v20	c0,3.584,2.916,6.5,6.5,6.5h22c0.276,0,0.5,0.224,0.5,0.5S51.776,78,51.5,78z"></path><path fill="#1f212b" d="M22.5,46c-0.276,0-0.5-0.224-0.5-0.5v-16c0-4.136,3.364-7.5,7.5-7.5h12c0.276,0,0.5,0.224,0.5,0.5	S41.776,23,41.5,23h-12c-3.584,0-6.5,2.916-6.5,6.5v16C23,45.776,22.776,46,22.5,46z"></path><path fill="#1f212b" d="M77.5,33c-0.276,0-0.5-0.224-0.5-0.5v-3c0-3.584-2.916-6.5-6.5-6.5h-25c-0.276,0-0.5-0.224-0.5-0.5	s0.224-0.5,0.5-0.5h25c4.136,0,7.5,3.364,7.5,7.5v3C78,32.776,77.776,33,77.5,33z"></path><path fill="#1f212b" d="M77.5,52c-0.276,0-0.5-0.224-0.5-0.5v-6c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v6	C78,51.776,77.776,52,77.5,52z"></path><path fill="#1f212b" d="M77.5,42c-0.276,0-0.5-0.224-0.5-0.5v-5c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v5	C78,41.776,77.776,42,77.5,42z"></path><path fill="#7c8a9e" d="M59,52c-3.866,0-7,3.134-7,7v23l30-30H59z"></path><path fill="#1f212b" d="M52,83c-0.129,0-0.259-0.025-0.383-0.076C51.243,82.769,51,82.404,51,82V59c0-4.411,3.589-8,8-8h23	c0.404,0,0.77,0.244,0.924,0.617c0.155,0.374,0.069,0.804-0.217,1.09l-30,30C52.516,82.898,52.26,83,52,83z M59,53	c-3.309,0-6,2.691-6,6v20.586L79.586,53H59z"></path>
+                    </svg>              
+                    <span class="fs-5 fw-semibold">MaximDraw</span>
+            </a>
+            <button type="button" class="btn btn-primary w-100 my-2">
+                <i class="fa-solid fa-plus"></i>
+                Create-Note
+            </button>
+            <ul class="list-unstyled ps-0">
+              <li class="mb-1">
+                <button class="btn btn-toggle ps-0 d-inline-flex align-items-center rounded border-0" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                  Math-notes
+                </button>
+                <div class="collapse" id="home-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex ms-4 text-decoration-none rounded">Chemestry</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex ms-4 text-decoration-none rounded">Physics</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex ms-4 text-decoration-none rounded">Math</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="border-top my-3"></li>
+              <li class="mb-1">
+                <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                  Account
+                </button>
+                <div class="collapse" id="account-collapse">
+                  <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-body-emphasis d-inline-flex ms-4 text-decoration-none rounded">New...</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex ms-4 text-decoration-none rounded">Profile</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex ms-4 text-decoration-none rounded">Settings</a></li>
+                    <li><a href="#" class="link-body-emphasis d-inline-flex ms-4 text-decoration-none rounded">Sign out</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <button type="button" class="btn text-black-50 fw-bold">
+                <i class="fa-solid fa-plus"></i>
+                Create-Space</button>
+          </div>
+          
+          <section class="h-100" id="left-con">
+            <header class="p-2">
+                <div class="container">
+                  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                    <div class="btn mx-3 d-none" id="collapse-btn-header" onclick="toggleSidebar()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+
+                    <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 link-body-emphasis text-decoration-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="40" height="40" viewBox="0 0 100 100">
+                            <path fill="#f9e65c" d="M82,29.429v41.143C82,76.857,76.857,82,70.571,82H29.429C23.143,82,18,76.857,18,70.571V29.429	C18,23.143,23.143,18,29.429,18h41.143C76.857,18,82,23.143,82,29.429z"></path>
+                            <path fill="#1f212b" d="M70.571,83H29.429C22.575,83,17,77.424,17,70.571V29.429C17,22.576,22.575,17,29.429,17h41.143	C77.425,17,83,22.576,83,29.429v41.143C83,77.424,77.425,83,70.571,83z M29.429,19C23.679,19,19,23.678,19,29.429v41.143	C19,76.322,23.679,81,29.429,81h41.143C76.321,81,81,76.322,81,70.571V29.429C81,23.678,76.321,19,70.571,19H29.429z"></path><path fill="#1f212b" d="M51.5,78h-22c-4.136,0-7.5-3.364-7.5-7.5v-20c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v20	c0,3.584,2.916,6.5,6.5,6.5h22c0.276,0,0.5,0.224,0.5,0.5S51.776,78,51.5,78z"></path><path fill="#1f212b" d="M22.5,46c-0.276,0-0.5-0.224-0.5-0.5v-16c0-4.136,3.364-7.5,7.5-7.5h12c0.276,0,0.5,0.224,0.5,0.5	S41.776,23,41.5,23h-12c-3.584,0-6.5,2.916-6.5,6.5v16C23,45.776,22.776,46,22.5,46z"></path><path fill="#1f212b" d="M77.5,33c-0.276,0-0.5-0.224-0.5-0.5v-3c0-3.584-2.916-6.5-6.5-6.5h-25c-0.276,0-0.5-0.224-0.5-0.5	s0.224-0.5,0.5-0.5h25c4.136,0,7.5,3.364,7.5,7.5v3C78,32.776,77.776,33,77.5,33z"></path><path fill="#1f212b" d="M77.5,52c-0.276,0-0.5-0.224-0.5-0.5v-6c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v6	C78,51.776,77.776,52,77.5,52z"></path><path fill="#1f212b" d="M77.5,42c-0.276,0-0.5-0.224-0.5-0.5v-5c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v5	C78,41.776,77.776,42,77.5,42z"></path><path fill="#7c8a9e" d="M59,52c-3.866,0-7,3.134-7,7v23l30-30H59z"></path><path fill="#1f212b" d="M52,83c-0.129,0-0.259-0.025-0.383-0.076C51.243,82.769,51,82.404,51,82V59c0-4.411,3.589-8,8-8h23	c0.404,0,0.77,0.244,0.924,0.617c0.155,0.374,0.069,0.804-0.217,1.09l-30,30C52.516,82.898,52.26,83,52,83z M59,53	c-3.309,0-6,2.691-6,6v20.586L79.586,53H59z"></path>
+                        </svg>  
+                    </a>
+            
+                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                      <li><a href="#" class="nav-link px-2 link-secondary">Save</a></li>
+                      <li><a href="#" class="nav-link px-2 link-body-emphasis">Export</a></li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          View
+                        </a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#">Action</a></li>
+                          <li><a class="dropdown-item" href="#">Another action</a></li>
+                          <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#" class="nav-link px-2 link-body-emphasis">Products</a></li>
+                    </ul>
+            
+                    <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+                      <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                    </form>
+            
+                    <div class="dropdown text-end">
+                      <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+                      </a>
+                      <ul class="dropdown-menu text-small">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </header>
+                <div class="workspace d-flex">
+
+                <div class="drawSpace d-flex flex-column">
+                    <div class="container toolbar d-flex align-items-center mt-2 rounded-5">
+                      <label for="savefile" class="custom-button">
+                        <i class="fa-solid fa-floppy-disk btn" id="savefile" title="SaveFile"></i>
+                      </label>  
+                      <label for="saveimg" class="custom-button">
+                        <i class="fa-solid fa-download btn" id="saveimg"></i>
+                      </label>
+                        <input type="file" id="loadfile">
+                        <label for="loadfile" class="custom-button" title="OpenFile">
+                          <i class="fa-regular fa-folder-open"></i>
+                        </label> 
+
+                        <label for="pen" class="custom-button">
+                          <i class="fa-solid fa-brush btn" id="pen" title="pen"></i>
+                        </label>
+
+                        <label for="eraser" class="custom-button">
+                          <i class="fa-solid fa-eraser btn" id="eraser" title="eraser"></i>
+                        </label>
+
+                        <label for="clearall" class="custom-button">
+                          <i class="fa-solid fa-trash btn" id="clearall" title="ClearAll"></i>
+                        </label>
+
+                        <div class="input-group input-group-sm fit-content">
+                          <span class="input-group-text" id="inputGroup-sizing-sm">Px</span>
+                          <input type="number" name="" id="stroke" min="0" max="40" value="3" onchange="changeStroke(event)">
+                        </div>
+
+                        <input type="color" id="changecolor">
+                        <label for="changecolor" class="custom-button">
+                          <i class="fa-solid fa-paintbrush" id="colorIcon"></i>
+                        </label>
+                    </div>
+
+                    <div class="m-3" id="myCanvas"></div>
+                </div>    
+
+                    
+                    <div id="editorWrapper">
+                         <div id="text-editor"></div>
+                    </div>
+                    
+                </div>
+          </section>       
+    </div>
+    
+
+    
+        <script src="main.js"></script>
+        <script src="drawVectors.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+        <script src="https://kit.fontawesome.com/31bbfc3a73.js" crossorigin="anonymous"></script> 
+    </body>
+</html>

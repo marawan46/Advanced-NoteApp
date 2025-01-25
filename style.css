@@ -1,0 +1,116 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    height: 100vh; /* Full height layout */
+    background-color: #DBE2EF!important;;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden !important;
+}
+header{
+    position: relative;
+    z-index: 20;
+    background-color: #F7FBFC;
+}
+.btn-toggle::before{
+    width: 1.25em;
+    line-height: 0;
+    content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+    transition: transform .35s ease;
+    transform-origin: .5em 50%;
+}
+.btn-toggle[aria-expanded="true"]::before{
+    transform: rotate(90deg);
+}
+
+.workspace{
+    height: 90%;
+}
+.container-layout {
+    display: flex;
+    height: 100vh;
+
+}
+#sideBar{
+    height: 100%;
+    box-shadow: -2px 0px 5px;
+    flex-shrink: 0;
+    background-color: #F7FBFC;
+
+}
+
+.minimize-left{
+    /* transform: translateX(-100%); */
+    animation: coll 0.3s forwards ease-in-out;
+}
+@keyframes coll {
+    100%{
+        position: absolute;
+        transform: translateX(-100%);
+    }
+}
+#left-con {
+    flex-grow: 1;
+    transition: all 0.3s ease-in-out;
+    overflow-x: auto; /* Prevent content overflow */
+}
+.drawSpace .toolbar{
+    justify-content: space-around;
+    padding: 10px;
+    width: 90%;
+    background-color: #fff;
+}
+.fit-content{
+    width: fit-content !important;
+}
+canvas{
+    aspect-ratio: 1/1;
+    border: #F9F7F7 2px solid;
+    border-radius: 10px;
+    height: 70%;
+    background-color: rgb(67, 67, 67);
+}
+#editorWrapper{
+    padding: 15px;
+}
+#text-editor{
+    border: 0;
+    height: 80%;
+}
+.ql-toolbar{
+    max-height: 100%;
+    background-color: #e3e3e3;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.ql-editor{
+    max-height: 100%;
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgb(75, 75, 75);
+}
+
+#loadfile {
+    display: none;
+  }
+#changecolor{
+    position: absolute;
+    opacity: 0;
+}
+  /* Style the custom button */
+  .custom-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+
+  .custom-button i {
+    font-size: 20px;
+  }
